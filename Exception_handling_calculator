@@ -1,0 +1,48 @@
+#calculator with exception handling
+
+class CalculatorClass():
+    def __init__(self,a,b):
+        self.a = a
+        self.b = b
+
+    def add(self):
+        return self.a + self.b
+    def sub(self):
+        return self.a - self.b
+    def multiply(self):
+        return self.a * self.b
+    def divide(self):
+        return self.a / self.b
+    def modulus(self):
+        return self.a % self.b
+    
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+    
+obj = CalculatorClass(a,b)
+    
+try:
+    while a  != "a":
+        print("Input either operators %,+,*,-,/")
+        operator = input("Enter operator: ")
+
+        if operator == "+":
+            print("Sum is: ",obj.add())
+
+        elif operator == "-":
+            print("subtraction is: ",obj.sub())
+
+        elif operator == "*":
+            print("multiplication is: ",obj.multiply())
+
+        elif operator == "/":
+            print("Division is: ",obj.divide())
+
+        elif operator == "%":
+            print("The modulus is: ",obj.modulus())
+        else:
+            print("Invalid choice")
+except ArithmeticError:
+    print("Its a Arithmetic error")
+
+
